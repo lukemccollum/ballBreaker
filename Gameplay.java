@@ -16,9 +16,11 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
 private boolean play = false;
 private int score = 0;
 
-private int totalBricks = 21;
+private int mapCol = 7;
+private int mapRow = 4;
+private int totalBricks = mapRow * mapCol;
 private Timer timer;
-private int delay = 2;
+private int delay = 7;
 
 private int playerX = 310;
 private int ballPosX = 180;
@@ -29,7 +31,7 @@ private int ballYdir = -3;
 private MapGenerator map;
 	
 public Gameplay() {
-	map = new MapGenerator(3, 7);
+	map = new MapGenerator(mapRow, mapCol);
 	addKeyListener(this);
 	setFocusable(true);
 	setFocusTraversalKeysEnabled(false);
